@@ -1187,7 +1187,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="59">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="498" y="438" />
+        <Position x="594" y="438" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1195,6 +1195,7 @@ Custom</DefaultAnnotationText>
           <CommaDecimal value="False" />
           <SelectFields>
             <SelectField field="Staff_2" selected="True" rename="Staff_12" />
+            <SelectField field="Line" selected="True" type="V_WString" size="21" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -1217,9 +1218,9 @@ Custom</DefaultAnnotationText>
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="Left_Line" selected="False" />
-                <SelectField field="Right_Date" selected="False" />
-                <SelectField field="Right_Line" selected="True" rename="Right_Line" />
+                <SelectField field="Right_Date" selected="False" type="DateTime" size="19" />
+                <SelectField field="Right_Line" selected="False" rename="Right_Line" />
+                <SelectField field="Right_DateTime_Out" selected="False" rename="Right_DateTime_Out" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -1254,6 +1255,55 @@ Custom</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1614" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\FINALDATAR.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>FINALDATAR.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="498" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>Date</InputFieldName>
+          <Format>yyyy-MM-dd hh</Format>
+          <OutputFieldName>DateTime_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert Date From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
     </Node>
   </Nodes>
   <Connections>
@@ -1427,11 +1477,19 @@ Custom</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="58" Connection="Output" />
-      <Destination ToolID="59" Connection="Input" />
+      <Destination ToolID="64" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="61" Connection="Join" />
       <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
