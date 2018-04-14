@@ -210,7 +210,7 @@
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="798" y="42" />
+        <Position x="1218" y="30" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -257,7 +257,7 @@ Table=Line12</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="798" y="138" />
+        <Position x="1230" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -498,15 +498,7 @@ Custom</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="16" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="16" Connection="Output" />
       <Destination ToolID="23" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="18" Connection="Output" />
-      <Destination ToolID="19" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="18" Connection="Output" />
@@ -527,6 +519,14 @@ Custom</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="28" Connection="Output" />
       <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
