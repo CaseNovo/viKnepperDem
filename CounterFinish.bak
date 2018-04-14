@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="162" y="150" />
+        <Position x="330" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -34,7 +34,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="258" y="150" />
+        <Position x="426" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -72,7 +72,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="354" y="150" />
+        <Position x="750" y="210" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -104,25 +104,21 @@
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1062" y="234" />
+        <Position x="1626" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="0">C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\Counter34.csv</File>
+          <File FileFormat="25" MaxRecords="">C:\Users\Thomas Hedeboe\Desktop\Case\Counter34.xlsx|||Counter34</File>
           <Passwords />
           <FormatSpecificOptions>
-            <LineEndStyle>CRLF</LineEndStyle>
-            <Delimeter>,</Delimeter>
-            <ForceQuotes>False</ForceQuotes>
-            <HeaderRow>True</HeaderRow>
-            <CodePage>28591</CodePage>
-            <WriteBOM>True</WriteBOM>
+            <OutputOption>Create</OutputOption>
           </FormatSpecificOptions>
           <MultiFile value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Counter34.csv</DefaultAnnotationText>
+          <DefaultAnnotationText>Counter34.xlsx
+Table=Counter34</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <Dependencies>
@@ -133,7 +129,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="474" y="42" width="100" height="40" />
+        <Position x="1014" y="126" width="100" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -153,7 +149,7 @@
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="630" y="270" width="100" height="40" />
+        <Position x="978" y="318" width="100" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -173,7 +169,7 @@
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-        <Position x="510" y="90" />
+        <Position x="1158" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -193,7 +189,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-        <Position x="510" y="198" />
+        <Position x="1158" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -213,7 +209,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="666" y="78" />
+        <Position x="1266" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -234,12 +230,12 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="150" />
+        <Position x="222" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\counters.csv</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\Thomas Hedeboe\Desktop\Case\counters.csv</File>
           <FormatSpecificOptions>
             <CodePage>28591</CodePage>
             <Delimeter>,</Delimeter>
@@ -261,10 +257,10 @@ Custom</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Line" size="254" source="File: C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\counters.csv" type="V_String" />
-            <Field name="CounterDescription" size="254" source="File: C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\counters.csv" type="V_String" />
-            <Field name="CounterValue" size="254" source="File: C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\counters.csv" type="V_String" />
-            <Field name="TimeStamp" size="254" source="File: C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\counters.csv" type="V_String" />
+            <Field name="Line" size="254" source="File: C:\Users\Thomas Hedeboe\Desktop\Case\counters.csv" type="V_String" />
+            <Field name="CounterDescription" size="254" source="File: C:\Users\Thomas Hedeboe\Desktop\Case\counters.csv" type="V_String" />
+            <Field name="CounterValue" size="254" source="File: C:\Users\Thomas Hedeboe\Desktop\Case\counters.csv" type="V_String" />
+            <Field name="TimeStamp" size="254" source="File: C:\Users\Thomas Hedeboe\Desktop\Case\counters.csv" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -272,7 +268,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="666" y="198" />
+        <Position x="1266" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -293,7 +289,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="762" y="78" />
+        <Position x="1398" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -329,7 +325,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="930" y="78" />
+        <Position x="1494" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -348,7 +344,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="774" y="198" />
+        <Position x="1362" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -384,25 +380,21 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1038" y="78" />
+        <Position x="1626" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="0">C:\Users\andre\Documents\Machine Learning\Projects\Project1\viKnepperDem\Counter12.csv</File>
+          <File FileFormat="25" MaxRecords="">C:\Users\Thomas Hedeboe\Desktop\Case\Counter12.xlsx|||Counter12</File>
           <Passwords />
           <FormatSpecificOptions>
-            <LineEndStyle>CRLF</LineEndStyle>
-            <Delimeter>,</Delimeter>
-            <ForceQuotes>False</ForceQuotes>
-            <HeaderRow>True</HeaderRow>
-            <CodePage>28591</CodePage>
-            <WriteBOM>True</WriteBOM>
+            <OutputOption>Create</OutputOption>
           </FormatSpecificOptions>
           <MultiFile value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Counter12.csv</DefaultAnnotationText>
+          <DefaultAnnotationText>Counter12.xlsx
+Table=Counter12</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <Dependencies>
@@ -413,7 +405,7 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="954" y="222" />
+        <Position x="1506" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -425,46 +417,6 @@ Custom</DefaultAnnotationText>
           <Name />
           <DefaultAnnotationText><![CDATA[Scrap = [Feed]-[OutputGood]
 ]]></DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="27">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="858" y="198" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="IF IsNull([Feed]) THEN [Feed]=0 ELSE [Feed] ENDIF" field="Feed" size="8" type="Int64" />
-            <FormulaField expression="IF IsNull([OutputGood]) THEN [OutputGood]=0 ELSE [OutputGood] ENDIF" field="OutputGood" size="8" type="Int64" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Feed = IF IsNull([Feed]) THEN [Feed]=0 ELSE [Feed] ENDIF
-OutputGood = IF IsNull(...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="28">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="834" y="78" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="IF IsNull([Feed]) THEN [Feed]=0 ELSE [Feed] ENDIF" field="Feed" size="8" type="Int64" />
-            <FormulaField expression="IF IsNull([OutputGood]) THEN [OutputGood]=0 ELSE [OutputGood] ENDIF" field="OutputGood" size="8" type="Int64" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Feed = IF IsNull([Feed]) THEN [Feed]=0 ELSE [Feed] ENDIF
-OutputGood = IF IsNull(...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -510,7 +462,7 @@ OutputGood = IF IsNull(...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="22" Connection="Output" />
-      <Destination ToolID="28" Connection="Input" />
+      <Destination ToolID="23" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="23" Connection="Output" />
@@ -518,19 +470,11 @@ OutputGood = IF IsNull(...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="27" Connection="Input" />
+      <Destination ToolID="26" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="26" Connection="Output" />
       <Destination ToolID="10" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="27" Connection="Output" />
-      <Destination ToolID="26" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="28" Connection="Output" />
-      <Destination ToolID="23" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
