@@ -1,22 +1,27 @@
 # exercise 6.2.1
+
+import sys
+sys.path.append("C:/Users/Emilie/Dropbox/Skole/DTU/4. semester/Machine learning og datamining/02450Toolbox_Python/Tools")
 from matplotlib.pyplot import figure, plot, subplot, title, xlabel, ylabel, show, clim
 from scipy.io import loadmat
 import sklearn.linear_model as lm
 from sklearn import model_selection
 from toolbox_02450 import feature_selector_lr, bmplot
 import numpy as np
+import pandas as pd
 
 # Load data from matlab file
-DF=pd.read_csv('FINALDATA.csv')
-X = mat_data['X']
-y = mat_data['y'].squeeze()
-attributeNames = [name[0] for name in mat_data['attributeNames'][0]]
-N, M = X.shape
+DF=pd.read_csv('FINALDATAR.csv',header=0,sep=',')
 
+y = DF.Sum_Duration
+x = DF.drop(['Sum_Duration','DateTime_Out'],axis=1)
+attributeNames = x.columns.values.tolist()
+X = np.asarray(np.mat(x))
+N, M = X.shape
 
 ## Crossvalidation
 # Create crossvalidation partition for evaluation
-K = 5
+K = 2
 CV = model_selection.KFold(n_splits=K,shuffle=True)
 
 # Initialize variables
@@ -36,7 +41,7 @@ for train_index, test_index in CV.split(X):
     y_train = y[train_index]
     X_test = X[test_index,:]
     y_test = y[test_index]
-    internal_cross_validation = 10
+    internal_cross_validation = 2
 
     # Compute squared error without using the input data at all
     Error_train_nofeatures[k] = np.square(y_train-y_train.mean()).sum()/y_train.shape[0]
