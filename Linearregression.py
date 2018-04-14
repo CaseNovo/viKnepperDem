@@ -24,7 +24,7 @@ DF.ProductDescription.replace(['Liraglutid 1.8 mg', 'NovoMix 30 GLY (CCH)','Lira
                                'no product'], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], inplace=True)
 
 
-DF=DF[DF.ProductDescription==2]
+DF=DF[DF.ProductDescription==12]
 y = DF.OutputGood.values
 
 X = DF.drop(['Error_Count','Line','DateTime_Out','ProductDescription','OutputGood','Feed'],axis=1)
