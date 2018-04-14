@@ -9,11 +9,12 @@ from scipy import stats
 
 plt.style.use('classic') # Set plot theme
 
-data=pd.read_csv('FINALDATAR.csv',sep=',')
+data=pd.read_csv('FINALDATA3.csv',sep=',')
 dataSek = data
 dates = data['DateTime_Out']
 date = [dt.datetime.strptime(d,'%Y-%m-%d %H:%M:%S') for d in dates]
 data = data.drop(['DateTime_Out'],axis=1) 
+data = data.drop(['ProductDescription'],axis=1) 
 #data['date']=date
 
 
@@ -46,7 +47,7 @@ names = list(data) # list the names of the attributtes
 X = data.values
 
 
-
+X = stats.zscore(X)
 
 
 a = 0
