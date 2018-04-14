@@ -11,36 +11,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.linalg import svd
 from scipy import stats
-from datetime import datetime
-import datetime as dt
+from datetime import *
+
 plt.style.use('classic') # Set plot theme
 
 stopdk=pd.read_csv('line12.csv',sep=';')
 sum(stopdk.Error)
 
 
-#staff1['StartTime_datetime'] = pd.to_datetime(staff1['StartTime'])
-#staff1['EndTime_datetime'] = pd.to_datetime(staff1['EndTime'])
-#staff1 = staff1.drop('Line',axis= 1)
+
+import datetime as dt
+Line1 = stopdk[stopdk['Line']==1]
+Line2 = stopdk[stopdk['Line']==2]
+
+Line1['StartTime_datetime'] = pd.to_datetime(Line1['StartTime'])
+Line1['EndTime_datetime'] = pd.to_datetime(Line1['EndTime'])
+Line1 = Line1.drop('Line',axis= 1)
 #staff1 = staff1.set_index('StartTime_datetime')
 
+ss=stopdk.groupby('StartTime')
 
-df1=stopdk.Error.copy()
-df2=stopdk.Error.copy()
-df1.index=stopdk.StartTime_datetime
-
-df2.index=stopdk['EndTime_dt']
-df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0),fill_value=0).cumsum()
-
-
-dates = stopdk['StartTime']
-x = [dt.datetime.strptime(d,'%d-%m-%y %H:%M').date() for d in dates]
-y=stopdk.Error
-
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-
-#plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m-%d-%Y %h:%m:%s'))
-#plt.gca().xaxis.set_major_locator(mdates.DayLocator())
-plt.plot(x,y)
-plt.gcf().autofmt_xdate()
+"""
+df1=Line1.copy()
+df2=Line1.copy()
+df1.index=df1['StartTime_datetime']
+df2.index=df2['EndTime_datetime']
+df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Error'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Error'].fillna(0),fill_value=0).cumsum()
+"""
