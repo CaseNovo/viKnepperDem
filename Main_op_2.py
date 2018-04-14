@@ -39,3 +39,13 @@ df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2
 
 data1=df_final
 np.savetxt('datastaff.csv',data1,delimiter=',')
+
+
+df1=staff2.copy()
+df2=staff2.copy()
+df1.index=df1['StartTime_datetime']
+df2.index=df2['EndTime_datetime']
+df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0),fill_value=0).cumsum()
+
+data2=df_final
+np.savetxt('datastaff.csv',data2,delimiter=',')
