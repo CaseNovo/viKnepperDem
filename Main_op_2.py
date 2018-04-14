@@ -38,7 +38,7 @@ df2.index=df2['EndTime_datetime']
 df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0),fill_value=0).cumsum()
 
 data1=df_final
-np.savetxt('datastaff.csv',data1,delimiter=',')
+np.savetxt('datastaff1.csv',data1,delimiter=',')
 
 
 staff2['StartTime_datetime'] = pd.to_datetime(staff2['StartTime'])
@@ -51,4 +51,4 @@ df2.index=df2['EndTime_datetime']
 df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0),fill_value=0).cumsum()
 
 data2=df_final
-np.savetxt('datastaff.csv',data2,delimiter=',')
+np.savetxt('datastaff2.csv',data2,delimiter=',')
