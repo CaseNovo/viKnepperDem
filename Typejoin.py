@@ -11,7 +11,6 @@ plt.style.use('classic') # Set plot theme
 
 
 staffdk=pd.read_csv('datastaff.csv')
-staffdk=pd.read_csv('batches.csv')
+batches=pd.read_csv('batches.csv',sep=',')
 
-
-
+batches1 =
