@@ -9,18 +9,17 @@ from datetime import datetime
 
 plt.style.use('classic') # Set plot theme
 
-batches=pd.read_csv('hermikkel.csv',sep = ';')  # Read the data and name alle the attributes
-pd.to_datetime(batches['StartTime'], format='%Y-%m-%d %h:%m:%s', errors='ignore')
 
 
-
-staffing=pd.read_csv('staffing.csv')
+staffdk=pd.read_csv('staffdk.csv')
 
 import datetime as dt
+staff1 = staffdk[staffdk['Line']==1]
+staff2 = staffdk[staffdk['Line']==2]
 
-dates = staffing['StartTime']
+dates = staff1['StartTime']
 x = [dt.datetime.strptime(d,'%Y-%m-%d %H:%M:%S').date() for d in dates]
-y = staffing['Staff']
+y = staff1['Staff']
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
