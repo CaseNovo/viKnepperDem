@@ -27,14 +27,17 @@ Line2 = stopdk[stopdk['Line']==2]
 Line1['StartTime_datetime'] = pd.to_datetime(Line1['StartTime'])
 Line1['EndTime_datetime'] = pd.to_datetime(Line1['EndTime'])
 Line1 = Line1.drop('Line',axis= 1)
-#staff1 = staff1.set_index('StartTime_datetime')
 
-ss=stopdk.groupby('StartTime')
 
-"""
+#ss=stopdk.groupby('StartTime')
+
+
 df1=Line1.copy()
 df2=Line1.copy()
 df1.index=df1['StartTime_datetime']
 df2.index=df2['EndTime_datetime']
-df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Error'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Error'].fillna(0),fill_value=0).cumsum()
-"""
+#df_final=df1.groupby(pd.TimeGrouper('h')).sum()['Error'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).sum()['Error'].fillna(0),fill_value=0).cumsum()
+
+df_final2=df1.groupby(pd.TimeGrouper('h')).sum()['Duration'].fillna(0),fill_value=0
+
+max(stopdk.Duration)
