@@ -41,6 +41,9 @@ data1=df_final
 np.savetxt('datastaff.csv',data1,delimiter=',')
 
 
+staff2['StartTime_datetime'] = pd.to_datetime(staff2['StartTime'])
+staff2['EndTime_datetime'] = pd.to_datetime(staff2['EndTime'])
+
 df1=staff2.copy()
 df2=staff2.copy()
 df1.index=df1['StartTime_datetime']
