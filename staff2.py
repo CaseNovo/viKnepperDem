@@ -38,4 +38,4 @@ df2.index=df2['EndTime_datetime']
 df_final=df1.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0).subtract(df2.groupby(pd.TimeGrouper('h')).mean()['Staff'].fillna(0),fill_value=0).cumsum()
 print(df_final)
 
-df_final.to_excel('staff_2.xlsx')
+df_final.to_csv('staff_2.csv')
