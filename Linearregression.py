@@ -9,19 +9,37 @@ from sklearn import model_selection
 from toolbox_02450 import feature_selector_lr, bmplot
 import numpy as np
 import pandas as pd
+from scipy import stats
+import statsmodels.formula.api as sm
 
 # Load data from matlab file
-DF=pd.read_csv('FINALDATAR.csv',header=0,sep=',')
+DF=pd.read_csv('FINALDATA3.csv',header=0,sep=',')
+DF.replace([np.inf, -np.inf], np.nan)
+DF.replace([np.inf, -np.inf], np.nan).dropna()
+DF.ProductDescription.replace(['Liraglutid 1.8 mg', 'NovoMix 30 GLY (CCH)','Liraglutid 0.9 mg',
+                               'NovoMix 50 NN2000','PenMix 30 (CCH)','Protaphan (CCH)','Detemir Gly (CCH)',
+                               'NovoMix 70 NN2000','Actrapid','Aspart (CHH)',
+                               'FLEX.LIRA 6MG 8.15 LI.BLUE CAP','FlexPen Aspart 100 3ML CCH',
+                               'Liraglutid','Liraglutid lysBlKapsel (placebo)','Testmedium (CCH)',
+                               'no product'], [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], inplace=True)
 
-y = DF.Sum_Duration
-x = DF.drop(['Sum_Duration','DateTime_Out'],axis=1)
-attributeNames = x.columns.values.tolist()
-X = np.asarray(np.mat(x))
+
+DF=DF[DF.ProductDescription==2]
+y = DF.OutputGood.values
+
+X = DF.drop(['Error_Count','Line','DateTime_Out','ProductDescription','OutputGood','Feed'],axis=1)
+attributeNames = X.columns.values.tolist()
+X = stats.zscore(X); #Normalize data
+#X = X.values
 N, M = X.shape
+
+
+DF=DF.replace([np.inf, -np.inf], np.nan)
+DF=DF.replace([np.inf, -np.inf], np.nan).dropna()
 
 ## Crossvalidation
 # Create crossvalidation partition for evaluation
-K = 2
+K = 5
 CV = model_selection.KFold(n_splits=K,shuffle=True)
 
 # Initialize variables
@@ -41,7 +59,7 @@ for train_index, test_index in CV.split(X):
     y_train = y[train_index]
     X_test = X[test_index,:]
     y_test = y[test_index]
-    internal_cross_validation = 2
+    internal_cross_validation = 5
 
     # Compute squared error without using the input data at all
     Error_train_nofeatures[k] = np.square(y_train-y_train.mean()).sum()/y_train.shape[0]
@@ -116,7 +134,7 @@ if len(ff) is 0:
     print('\nNo features were selected, i.e. the data (X) in the fold cannot describe the outcomes (y).' )
 else:
     m = lm.LinearRegression(fit_intercept=True).fit(X[:,ff], y)
-
+    model = sm.OLS(y,X[:,ff]).fit()
     y_est= m.predict(X[:,ff])
     residual=y-y_est
 
@@ -128,6 +146,8 @@ else:
        xlabel(attributeNames[ff[i]])
        ylabel('residual error')
 
+
+model.summary()
 
 show()
 
