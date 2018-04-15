@@ -34,16 +34,18 @@ totalDown =sum(D['duration'])
 D.to_csv('D.csv', sep='\t')
 starving.to_csv('starvingStop.csv',sep='\t')
 allStarving=sum(starving['Duration'])
-
+meanStarving = np.mean(starving['Duration'])
 starving = starving[starving.Duration>10]
 bigStarving=sum(starving['Duration'])
+
+
 
 bigStarving/allStarving # 1/3 af tiden starver vi mere end 10 sek
 
 bigFejlMin =bigStarving - len(starving['Duration'])*5 # Hvordan ser det ud hvis vi min fejl
 
 
-costStarvingOpti = bigFejlMin/60*188*2 # sænkes fejl til mean = 5 sek kan vi der tjenes 442.000 kroner per 3 måneder.
+costStarvingOpti = bigFejlMin/60*188*2*0.75 # sænkes fejl til mean = 5 sek kan vi der tjenes 442.000 kroner per 3 måneder.
 
 
 
@@ -121,3 +123,12 @@ prodDK2 = DFpenn[DFpenn['Line']==2]
 prodDK2 = sum(prodDK2['OutputGood'])
 
 prodDK1/prodDK2
+
+
+prodBrazil1 = DFpenn[DFpenn['Line']==3]
+prodBrazil1 = sum(prodBrazil1['OutputGood'])
+
+prodBrazil2 = DFpenn[DFpenn['Line']==4]
+prodBrazil2 = sum(prodBrazil2['OutputGood'])
+
+prodBrazil1/prodBrazil2
