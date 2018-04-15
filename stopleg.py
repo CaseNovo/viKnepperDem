@@ -66,10 +66,8 @@ bigStarvingDK/bigFejlMin
 bigFejlMinDK =bigStarvingDK - len(starvingDK['Duration'])*5 # Hvordan ser det ud hvis vi min fejl
 
 
-costStarvingOptiDK = bigFejlMinDK/60*188*2 # sænkes fejl til mean = 5 sek kan vi der tjenes 357.500 kroner per 3 måneder.
+costStarvingOptiDK = bigFejlMinDK/60*188*2 *0.75# sænkes fejl til mean = 5 sek kan vi der tjenes 357.500 kroner per 3 måneder.
 
-
-costStarvingOptiDK = costStarvingOpti-costStarvingOptiBrazil
 
 
 # Finder Starving sumba
@@ -82,7 +80,7 @@ bigStarvingBrazil/bigFejlMin # 1/3 af tiden starver vi mere end 10 sek
 bigFejlMinBrazil =bigStarvingBrazil - len(starvingBrazil['Duration'])*5 # Hvordan ser det ud hvis vi min fejl
 
 
-costStarvingOptiBrazil = bigFejlMinBrazil/60*188*2 
+costStarvingOptiBrazil = bigFejlMinBrazil/60*188*2 *0.75
 bigStarvingBrazil=sum(starvingBrazil['Duration'])
 
 bigStarvingBrazil/bigFejlMin 
@@ -90,7 +88,7 @@ bigStarvingBrazil/bigFejlMin
 bigFejlMinBrazil =bigStarvingBrazil - len(starvingBrazil['Duration'])*5 # Hvordan ser det ud hvis vi min fejl
 
 
-costStarvingOptiBrazil = bigFejlMinBrazil/60*188*2 # sænkes fejl til mean = 5 sek kan vi der tjenes 357.500 kroner per 3 måneder.
+costStarvingOptiBrazil = bigFejlMinBrazil/60*188*2 *0.75# sænkes fejl til mean = 5 sek kan vi der tjenes 357.500 kroner per 3 måneder.
 
 
 costStarvingOptiDK = costStarvingOpti-costStarvingOptiBrazil
@@ -113,3 +111,13 @@ totalProdBrazil = totalProdBrazil/(totalProdBrazil+totalProdDK)
 # Hvis brazil får lige så god starving som DK
 gevinst=bigStarvingBrazil - bigStarvingDK*1/totalProdBrazil
 gevingcost = gevinst/60*188*2*0.75
+
+
+
+prodDK1 = DFpenn[DFpenn['Line']==1]
+prodDK1 = sum(prodDK1['OutputGood'])
+
+prodDK2 = DFpenn[DFpenn['Line']==2]
+prodDK2 = sum(prodDK2['OutputGood'])
+
+prodDK1/prodDK2
