@@ -5,7 +5,7 @@ DFpenn = pd.read_csv('DFpennr.csv',sep='\t')
 df = data
 D = pd.DataFrame(columns=['signal', 'duration'])
 #df = df.drop(['Signal']==['Machine stopped manually'],axis=0)
-
+sum(DFpenn['OutputGood'])
 
 starving = df[df.Signal=='Starving']
 np.mean(starving['Duration'])
